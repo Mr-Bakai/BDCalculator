@@ -1,4 +1,4 @@
-package com.hfad.bdcalculator.ui.dashboard
+package com.hfad.bdcalculator.ui.fragments.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater

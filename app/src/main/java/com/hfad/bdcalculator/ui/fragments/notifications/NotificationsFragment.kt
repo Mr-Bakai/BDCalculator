@@ -1,4 +1,4 @@
-package com.hfad.bdcalculator.ui.notifications
+package com.hfad.bdcalculator.ui.fragments.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater
