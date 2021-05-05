@@ -14,6 +14,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
 
     override fun setupUI(){
         removeToolbarBottomBar()
+        binding.zero.setOnClickListener(this)
         binding.one.setOnClickListener(this)
         binding.two.setOnClickListener(this)
         binding.three.setOnClickListener(this)
@@ -30,14 +31,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
         binding.minus.setOnClickListener(this)
         binding.addition.setOnClickListener(this)
         binding.equal.setOnClickListener(this)
+        binding.comma.setOnClickListener(this)
         binding.c.setOnClickListener(this)
         observers()
     }
 
     private fun observers() {
-        viewModel.fieldLiveData.observe(this) {
+        viewModel.fieldLiveData.observe(viewLifecycleOwner) {
             binding.textMain.setText(it)
             binding.textMain.setSelection(binding.textMain.text.length)
+        }
+
+        viewModel.resultLiveData.observe(viewLifecycleOwner){
+            binding.textResult.text = it.toString()
         }
     }
 
