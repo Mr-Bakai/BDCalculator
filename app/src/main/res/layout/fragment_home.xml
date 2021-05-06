@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".ui.fragments.home.HomeFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline5050"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVertical2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.07" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVertical3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.62" />
+
+        <EditText
+            android:id="@+id/textMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="48dp"
+            android:background="@android:color/transparent"
+            android:gravity="right"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="48dp"
+            android:gravity="right"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/backSpace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_backspace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guidelineVertical" />
+
+        <ImageView
+            android:id="@+id/imageClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_time"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageRuler"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVertical2" />
+
+        <ImageView
+            android:id="@+id/imageRuler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:rotation="-45"
+            android:src="@drawable/ic_ruler"
+            app:layout_constraintBottom_toBottomOf="@+id/imageClock"
+            app:layout_constraintEnd_toStartOf="@+id/imagePi"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageClock"
+            app:layout_constraintTop_toTopOf="@+id/imageClock" />
+
+        <ImageView
+            android:id="@+id/imagePi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_keys_2"
+            app:layout_constraintBottom_toBottomOf="@+id/imageRuler"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVertical3"
+            app:layout_constraintStart_toEndOf="@+id/imageRuler"
+            app:layout_constraintTop_toTopOf="@+id/imageRuler" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline5050">
+
+        <TextView
+            android:id="@+id/c"
+            android:text="C"
+            android:textColor="#D46C52"
+            app:layout_constraintBottom_toTopOf="@+id/seven"
+            app:layout_constraintEnd_toStartOf="@+id/parentheses"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/text_style" />
+
+        <TextView
+            android:id="@+id/seven"
+            style="@style/text_style"
+            android:text="7"
+            app:layout_constraintBottom_toTopOf="@+id/four"
+            app:layout_constraintEnd_toStartOf="@+id/eight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/c"/>
+
+        <TextView
+            android:id="@+id/eight"
+            style="@style/text_style"
+            android:text="8"
+            app:layout_constraintBottom_toTopOf="@+id/five"
+            app:layout_constraintEnd_toStartOf="@+id/nine"
+            app:layout_constraintStart_toEndOf="@+id/seven"
+            app:layout_constraintTop_toBottomOf="@+id/parentheses"
+             />
+
+        <TextView
+            android:id="@+id/nine"
+            android:text="9"
+            style="@style/text_style"
+            app:layout_constraintBottom_toTopOf="@+id/six"
+            app:layout_constraintEnd_toStartOf="@+id/multiply"
+            app:layout_constraintStart_toEndOf="@+id/eight"
+            app:layout_constraintTop_toBottomOf="@+id/percentage"/>
+
+        <TextView
+            android:id="@+id/multiply"
+            android:text="X"
+            style="@style/symbol_style"
+            app:layout_constraintBottom_toTopOf="@+id/minus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/nine"
+            app:layout_constraintTop_toBottomOf="@+id/div"/>
+
+        <TextView
+            android:id="@+id/four"
+            android:text="4"
+            style="@style/text_style"
+            app:layout_constraintBottom_toTopOf="@+id/one"
+            app:layout_constraintEnd_toStartOf="@+id/five"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seven"
+            />
+
+
+        <TextView
+            android:id="@+id/five"
+            android:text="5"
+            style="@style/text_style"
+            app:layout_constraintBottom_toTopOf="@+id/two"
+            app:layout_constraintEnd_toStartOf="@+id/six"
+            app:layout_constraintStart_toEndOf="@+id/four"
+            app:layout_constraintTop_toBottomOf="@+id/eight"
+           />
+
+        <TextView
+            android:id="@+id/six"
+            android:text="6"
+            style="@style/text_style"
+            app:layout_constraintBottom_toTopOf="@+id/three"
+            app:layout_constraintEnd_toStartOf="@+id/minus"
+            app:layout_constraintStart_toEndOf="@+id/five"
+            app:layout_constraintTop_toBottomOf="@+id/nine"
+          />
+
+        <TextView
+            android:id="@+id/minus"
+            android:text="-"
+            style="@style/symbol_style"
+            app:layout_constraintBottom_toTopOf="@+id/addition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/six"
+            app:layout_constraintTop_toBottomOf="@+id/multiply"
+          />
+
+        <TextView
+            android:id="@+id/one"
+            style="@style/text_style"
+            android:text="1"
+            app:layout_constraintBottom_toTopOf="@+id/plusMinus"
+            app:layout_constraintEnd_toStartOf="@+id/two"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/four"
+           />
+
+        <TextView
+            android:id="@+id/two"
+            style="@style/text_style"
+            android:text="2"
+            app:layout_constraintBottom_toTopOf="@+id/zero"
+            app:layout_constraintEnd_toStartOf="@+id/three"
+            app:layout_constraintStart_toEndOf="@+id/one"
+            app:layout_constraintTop_toBottomOf="@+id/five"
+           />
+
+        <TextView
+            android:id="@+id/three"
+            android:text="3"
+            style="@style/text_style"
+            app:layout_constraintBottom_toTopOf="@+id/comma"
+            app:layout_constraintEnd_toStartOf="@+id/addition"
+            app:layout_constraintStart_toEndOf="@+id/two"
+            app:layout_constraintTop_toBottomOf="@+id/six"
+           />
+
+        <TextView
+            android:id="@+id/addition"
+            android:text="+"
+            style="@style/symbol_style"
+            app:layout_constraintBottom_toTopOf="@+id/equal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/three"
+            app:layout_constraintTop_toBottomOf="@+id/minus" />
+
+        <TextView
+            android:id="@+id/plusMinus"
+            android:text="+/-"
+            style="@style/text_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/zero"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/one" />
+
+        <TextView
+            android:id="@+id/zero"
+            android:text="0"
+            style="@style/text_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/comma"
+            app:layout_constraintStart_toEndOf="@+id/plusMinus"
+            app:layout_constraintTop_toBottomOf="@+id/two"
+          />
+
+        <TextView
+            android:id="@+id/comma"
+            android:text=","
+            style="@style/text_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/equal"
+            app:layout_constraintStart_toEndOf="@+id/zero"
+            app:layout_constraintTop_toBottomOf="@+id/three"
+           />
+
+        <TextView
+            android:id="@+id/equal"
+            style="@style/equal_style"
+            android:text="="
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/comma"
+            app:layout_constraintTop_toBottomOf="@+id/addition"
+           />
+
+        <TextView
+            android:id="@+id/parentheses"
+            style="@style/symbol_style"
+            android:text="()"
+            app:layout_constraintBottom_toTopOf="@+id/eight"
+            app:layout_constraintEnd_toStartOf="@+id/percentage"
+            app:layout_constraintStart_toEndOf="@+id/c"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/percentage"
+            style="@style/symbol_style"
+            android:text="%"
+            app:layout_constraintBottom_toTopOf="@+id/nine"
+            app:layout_constraintEnd_toStartOf="@+id/div"
+            app:layout_constraintStart_toEndOf="@+id/parentheses"
+            app:layout_constraintTop_toTopOf="parent"
+           />
+
+        <TextView
+            android:id="@+id/div"
+            style="@style/symbol_style"
+            android:text="÷"
+            app:layout_constraintBottom_toTopOf="@+id/multiply"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/percentage"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="#FAF1F1F1"
+        app:layout_constraintBottom_toTopOf="@id/guideline5050" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5050"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
