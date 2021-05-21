@@ -112,7 +112,7 @@ class DeprecateParser {
         return roundToPrecision(res, precision)
     }
 
-    private fun evaluate(expression: String): Double {
+    fun evaluate(expression: String): Double {
         for (operator in Operators.values()) {
             /*
                 find the operator from right side (last)

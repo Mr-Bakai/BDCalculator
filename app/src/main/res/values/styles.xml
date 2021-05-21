@@ -2,27 +2,98 @@
 <resources>
 
     <style name="text_style">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">23sp</item>
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">#545454</item>
         <item name="android:gravity">center</item>
         <item name="android:background">@drawable/circle_bg</item>
     </style>
 
     <style name="symbol_style">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">23sp</item>
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:textSize">27sp</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">#39B74A</item>
+        <item name="android:textColor">#2A7F36</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/open_sans_regular</item>
         <item name="android:background">@drawable/circle_bg</item>
     </style>
 
     <style name="equal_style">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:textSize">37sp</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">@font/open_sans_regular</item>
+        <item name="android:background">@drawable/equal_bg</item>
+    </style>
+
+    <style name="minus_plus_style">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:background">@drawable/circle_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#2A7F36</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+
+    <style name="x_style">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:background">@drawable/circle_bg</item>
+        <item name="android:fontFamily">@font/nunito_light</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#2A7F36</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="div_style">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:background">@drawable/circle_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#2A7F36</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/nunito_light</item>
+    </style>
+
+    <style name="percentage_style">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:background">@drawable/circle_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#2A7F36</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="parenthese_style">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:background">@drawable/circle_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#2A7F36</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="neg_pos_style">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:background">@drawable/circle_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#545454</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+
+    <style name="wrap_content_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">23sp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/equal_bg</item>
     </style>
 </resources>

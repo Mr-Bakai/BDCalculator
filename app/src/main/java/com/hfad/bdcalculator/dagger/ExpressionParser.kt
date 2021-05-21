@@ -101,7 +101,7 @@ class ExpressionParser {
         }
     }
 
-    private fun evaluateExpression(expression: String): Double {
+     fun evaluateExpression(expression: String): Double {
         var i = 0;
         val numString = StringBuilder()
         while (i < expression.length) {
@@ -427,5 +427,4 @@ class ExpressionParser {
         return if (num == 0.0) output
         else factorial(num - 1, output * num)
     }
-
 }

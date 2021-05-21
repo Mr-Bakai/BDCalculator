@@ -7,8 +7,8 @@
     android:background="@android:color/transparent"
     tools:context=".ui.fragments.home.HomeFragment">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/guideline5050"
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9" />
+            app:layout_constraintGuide_percent="0.89" />
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -29,55 +29,58 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.07" />
+            app:layout_constraintGuide_percent="0.04" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineVertical3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.62" />
+            app:layout_constraintGuide_percent="0.57" />
 
         <EditText
             android:id="@+id/textMain"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginHorizontal="7dp"
             android:background="@android:color/transparent"
+            android:fontFamily="@font/heebo_light"
             android:gravity="right"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="#545454"
+            android:textSize="37sp"
+            app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
+            app:layout_constraintStart_toEndOf="@id/guidelineVertical2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="822 - 30" />
 
         <TextView
             android:id="@+id/textResult"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="48dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="@font/heebo_light"
             android:gravity="right"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/backSpace"
+            app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
+            app:layout_constraintStart_toEndOf="@id/guidelineVertical2"
+            tools:text="762" />
 
         <ImageView
             android:id="@+id/backSpace"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            style="@style/wrap_content_style"
+            android:padding="5dp"
             android:src="@drawable/ic_backspace"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/guidelineVertical" />
+            app:layout_constraintBottom_toBottomOf="@+id/imagePi"
+            app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
+            app:layout_constraintTop_toTopOf="@+id/imagePi" />
 
         <ImageView
             android:id="@+id/imageClock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            style="@style/wrap_content_style"
+            android:layout_marginBottom="30dp"
+            android:padding="5dp"
             android:src="@drawable/ic_time"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageRuler"
@@ -85,9 +88,8 @@
 
         <ImageView
             android:id="@+id/imageRuler"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            style="@style/wrap_content_style"
+            android:padding="5dp"
             android:rotation="-45"
             android:src="@drawable/ic_ruler"
             app:layout_constraintBottom_toBottomOf="@+id/imageClock"
@@ -98,10 +100,9 @@
 
         <ImageView
             android:id="@+id/imagePi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:src="@drawable/ic_keys_2"
+            style="@style/wrap_content_style"
+            android:padding="5dp"
+            android:src="@drawable/ic_math"
             app:layout_constraintBottom_toBottomOf="@+id/imageRuler"
             app:layout_constraintEnd_toStartOf="@+id/guidelineVertical3"
             app:layout_constraintStart_toEndOf="@+id/imageRuler"
@@ -110,208 +111,401 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline5050">
 
-        <TextView
-            android:id="@+id/c"
-            android:text="C"
-            android:textColor="#D46C52"
-            app:layout_constraintBottom_toTopOf="@+id/seven"
-            app:layout_constraintEnd_toStartOf="@+id/parentheses"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/sevenW"
+            app:layout_constraintEnd_toStartOf="@+id/parenthesesW"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/text_style" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/seven"
+            <TextView
+                android:id="@+id/c"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="C"
+                android:textColor="#D46C52" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sevenW"
             style="@style/text_style"
-            android:text="7"
-            app:layout_constraintBottom_toTopOf="@+id/four"
-            app:layout_constraintEnd_toStartOf="@+id/eight"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/fourW"
+            app:layout_constraintEnd_toStartOf="@+id/eightW"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/c"/>
+            app:layout_constraintTop_toBottomOf="@+id/cW">
 
-        <TextView
-            android:id="@+id/eight"
+            <TextView
+                android:id="@+id/seven"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="7" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/eightW"
             style="@style/text_style"
-            android:text="8"
-            app:layout_constraintBottom_toTopOf="@+id/five"
-            app:layout_constraintEnd_toStartOf="@+id/nine"
-            app:layout_constraintStart_toEndOf="@+id/seven"
-            app:layout_constraintTop_toBottomOf="@+id/parentheses"
-             />
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/fiveW"
+            app:layout_constraintEnd_toStartOf="@+id/nineW"
+            app:layout_constraintStart_toEndOf="@+id/sevenW"
+            app:layout_constraintTop_toBottomOf="@+id/parenthesesW">
 
-        <TextView
-            android:id="@+id/nine"
-            android:text="9"
+            <TextView
+                android:id="@+id/eight"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="8" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/nineW"
             style="@style/text_style"
-            app:layout_constraintBottom_toTopOf="@+id/six"
-            app:layout_constraintEnd_toStartOf="@+id/multiply"
-            app:layout_constraintStart_toEndOf="@+id/eight"
-            app:layout_constraintTop_toBottomOf="@+id/percentage"/>
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/sixW"
+            app:layout_constraintEnd_toStartOf="@+id/multiplyW"
+            app:layout_constraintStart_toEndOf="@+id/eightW"
+            app:layout_constraintTop_toBottomOf="@+id/percentageW">
 
-        <TextView
-            android:id="@+id/multiply"
-            android:text="X"
-            style="@style/symbol_style"
-            app:layout_constraintBottom_toTopOf="@+id/minus"
+            <TextView
+                android:id="@+id/nine"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="9" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/multiplyW"
+            style="@style/x_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/minusW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/nine"
-            app:layout_constraintTop_toBottomOf="@+id/div"/>
+            app:layout_constraintStart_toEndOf="@+id/nineW"
+            app:layout_constraintTop_toBottomOf="@+id/divW">
 
-        <TextView
-            android:id="@+id/four"
-            android:text="4"
+            <TextView
+                android:id="@+id/multiply"
+                style="@style/x_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="x" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fourW"
             style="@style/text_style"
-            app:layout_constraintBottom_toTopOf="@+id/one"
-            app:layout_constraintEnd_toStartOf="@+id/five"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/oneW"
+            app:layout_constraintEnd_toStartOf="@+id/fiveW"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seven"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/sevenW">
+
+            <TextView
+                android:id="@+id/four"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="4" />
+        </androidx.cardview.widget.CardView>
 
 
-        <TextView
-            android:id="@+id/five"
-            android:text="5"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fiveW"
             style="@style/text_style"
-            app:layout_constraintBottom_toTopOf="@+id/two"
-            app:layout_constraintEnd_toStartOf="@+id/six"
-            app:layout_constraintStart_toEndOf="@+id/four"
-            app:layout_constraintTop_toBottomOf="@+id/eight"
-           />
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/twoW"
+            app:layout_constraintEnd_toStartOf="@+id/sixW"
+            app:layout_constraintStart_toEndOf="@+id/fourW"
+            app:layout_constraintTop_toBottomOf="@+id/eightW">
 
-        <TextView
-            android:id="@+id/six"
-            android:text="6"
+            <TextView
+                android:id="@+id/five"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="5" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sixW"
             style="@style/text_style"
-            app:layout_constraintBottom_toTopOf="@+id/three"
-            app:layout_constraintEnd_toStartOf="@+id/minus"
-            app:layout_constraintStart_toEndOf="@+id/five"
-            app:layout_constraintTop_toBottomOf="@+id/nine"
-          />
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/threeW"
+            app:layout_constraintEnd_toStartOf="@+id/minusW"
+            app:layout_constraintStart_toEndOf="@+id/fiveW"
+            app:layout_constraintTop_toBottomOf="@+id/nineW">
 
-        <TextView
-            android:id="@+id/minus"
-            android:text="-"
-            style="@style/symbol_style"
-            app:layout_constraintBottom_toTopOf="@+id/addition"
+            <TextView
+                android:id="@+id/six"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="6" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/minusW"
+            style="@style/minus_plus_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/additionW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/six"
-            app:layout_constraintTop_toBottomOf="@+id/multiply"
-          />
+            app:layout_constraintStart_toEndOf="@+id/sixW"
+            app:layout_constraintTop_toBottomOf="@+id/multiplyW">
 
-        <TextView
-            android:id="@+id/one"
+            <TextView
+                android:id="@+id/minus"
+                style="@style/minus_plus_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="−" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/oneW"
             style="@style/text_style"
-            android:text="1"
-            app:layout_constraintBottom_toTopOf="@+id/plusMinus"
-            app:layout_constraintEnd_toStartOf="@+id/two"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/plusMinusW"
+            app:layout_constraintEnd_toStartOf="@+id/twoW"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/four"
-           />
+            app:layout_constraintTop_toBottomOf="@+id/fourW">
 
-        <TextView
-            android:id="@+id/two"
+            <TextView
+                android:id="@+id/one"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/twoW"
             style="@style/text_style"
-            android:text="2"
-            app:layout_constraintBottom_toTopOf="@+id/zero"
-            app:layout_constraintEnd_toStartOf="@+id/three"
-            app:layout_constraintStart_toEndOf="@+id/one"
-            app:layout_constraintTop_toBottomOf="@+id/five"
-           />
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/zeroW"
+            app:layout_constraintEnd_toStartOf="@+id/threeW"
+            app:layout_constraintStart_toEndOf="@+id/oneW"
+            app:layout_constraintTop_toBottomOf="@+id/fiveW">
 
-        <TextView
-            android:id="@+id/three"
-            android:text="3"
+            <TextView
+                android:id="@+id/two"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="2" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/threeW"
             style="@style/text_style"
-            app:layout_constraintBottom_toTopOf="@+id/comma"
-            app:layout_constraintEnd_toStartOf="@+id/addition"
-            app:layout_constraintStart_toEndOf="@+id/two"
-            app:layout_constraintTop_toBottomOf="@+id/six"
-           />
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/commaW"
+            app:layout_constraintEnd_toStartOf="@+id/additionW"
+            app:layout_constraintStart_toEndOf="@+id/twoW"
+            app:layout_constraintTop_toBottomOf="@+id/sixW">
 
-        <TextView
-            android:id="@+id/addition"
-            android:text="+"
-            style="@style/symbol_style"
-            app:layout_constraintBottom_toTopOf="@+id/equal"
+            <TextView
+                android:id="@+id/three"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="3" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/additionW"
+            style="@style/minus_plus_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/equalW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/three"
-            app:layout_constraintTop_toBottomOf="@+id/minus" />
+            app:layout_constraintStart_toEndOf="@+id/threeW"
+            app:layout_constraintTop_toBottomOf="@+id/minusW">
 
-        <TextView
-            android:id="@+id/plusMinus"
-            android:text="+/-"
-            style="@style/text_style"
+            <TextView
+                android:id="@+id/addition"
+                style="@style/minus_plus_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="+" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/plusMinusW"
+            style="@style/neg_pos_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/zero"
+            app:layout_constraintEnd_toStartOf="@+id/zeroW"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/one" />
+            app:layout_constraintTop_toBottomOf="@+id/oneW">
 
-        <TextView
-            android:id="@+id/zero"
-            android:text="0"
+            <TextView
+                android:id="@+id/plusMinus"
+                style="@style/neg_pos_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="+/−" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/zeroW"
             style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/comma"
-            app:layout_constraintStart_toEndOf="@+id/plusMinus"
-            app:layout_constraintTop_toBottomOf="@+id/two"
-          />
+            app:layout_constraintEnd_toStartOf="@+id/commaW"
+            app:layout_constraintStart_toEndOf="@+id/plusMinusW"
+            app:layout_constraintTop_toBottomOf="@+id/twoW">
 
-        <TextView
-            android:id="@+id/comma"
-            android:text=","
+            <TextView
+                android:id="@+id/zero"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/commaW"
             style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/equal"
-            app:layout_constraintStart_toEndOf="@+id/zero"
-            app:layout_constraintTop_toBottomOf="@+id/three"
-           />
+            app:layout_constraintEnd_toStartOf="@+id/equalW"
+            app:layout_constraintStart_toEndOf="@+id/zeroW"
+            app:layout_constraintTop_toBottomOf="@+id/threeW">
 
-        <TextView
-            android:id="@+id/equal"
+            <TextView
+                android:id="@+id/comma"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="," />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/equalW"
             style="@style/equal_style"
-            android:text="="
-            android:textColor="@color/white"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/comma"
-            app:layout_constraintTop_toBottomOf="@+id/addition"
-           />
+            app:layout_constraintStart_toEndOf="@+id/commaW"
+            app:layout_constraintTop_toBottomOf="@+id/additionW">
 
-        <TextView
-            android:id="@+id/parentheses"
-            style="@style/symbol_style"
-            android:text="()"
-            app:layout_constraintBottom_toTopOf="@+id/eight"
-            app:layout_constraintEnd_toStartOf="@+id/percentage"
-            app:layout_constraintStart_toEndOf="@+id/c"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/equal"
+                style="@style/equal_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="="
+                android:textColor="@color/white" />
+        </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/percentage"
-            style="@style/symbol_style"
-            android:text="%"
-            app:layout_constraintBottom_toTopOf="@+id/nine"
-            app:layout_constraintEnd_toStartOf="@+id/div"
-            app:layout_constraintStart_toEndOf="@+id/parentheses"
-            app:layout_constraintTop_toTopOf="parent"
-           />
 
-        <TextView
-            android:id="@+id/div"
-            style="@style/symbol_style"
-            android:text="÷"
-            app:layout_constraintBottom_toTopOf="@+id/multiply"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/parenthesesW"
+            style="@style/parenthese_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/eightW"
+            app:layout_constraintEnd_toStartOf="@+id/percentageW"
+            app:layout_constraintStart_toEndOf="@+id/cW"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/parentheses"
+                style="@style/parenthese_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="( )" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/percentageW"
+            style="@style/percentage_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/nineW"
+            app:layout_constraintEnd_toStartOf="@+id/divW"
+            app:layout_constraintStart_toEndOf="@+id/parenthesesW"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/percentage"
+                style="@style/percentage_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="%" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/divW"
+            style="@style/div_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/multiplyW"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/percentage"
-            app:layout_constraintTop_toTopOf="parent"
-             />
+            app:layout_constraintStart_toEndOf="@+id/percentageW"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/div"
+                style="@style/div_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="÷" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.71" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -319,7 +513,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginHorizontal="16dp"
-        android:background="#FAF1F1F1"
+        android:background="#B2F6F5F5"
         app:layout_constraintBottom_toTopOf="@id/guideline5050" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -327,7 +521,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.41" />
+        app:layout_constraintGuide_percent="0.4" />
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/historyContainer"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:background="@color/blackish"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:background="#00000000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
