@@ -5,19 +5,23 @@ import android.animation.ValueAnimator
 import android.view.View
 import android.widget.TextView
 import androidx.core.view.isVisible
-import com.example.core.ui.base.BaseFragment
+import com.hfad.bdcalculator.core.ui.base.BaseFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.hfad.bdcalculator.R
 import com.hfad.bdcalculator.databinding.FragmentHomeBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
+class HomeFragment : BaseFragment<FragmentHomeBinding>(
     FragmentHomeBinding::inflate,
-    HomeViewModel::class.java
 ), View.OnClickListener {
+
+    override val viewModel: HomeViewModel by viewModel()
+
     override fun setupLiveData() {}
 
     override fun setupUI() {
         removeToolbarBottomBar()
+
         binding.zero.setAnimation()
         binding.one.setAnimation()
         binding.two.setAnimation()
@@ -38,8 +42,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
         binding.comma.setAnimation()
         binding.c.setAnimation()
         binding.plusMinus.setAnimation()
+
         binding.backSpace.setOnClickListener(this)
-        binding.imageClock.setOnClickListener{adjustVisibility()}
+        binding.imageClock.setOnClickListener(this)
+
         observers()
     }
 
@@ -52,11 +58,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
         viewModel.resultLiveData.observe(viewLifecycleOwner) {
             binding.textResult.text = it.toString()
         }
+
+        viewModel.fromRoom.observe(viewLifecycleOwner){
+            binding.recyclerView.apply {
+                this.adapter = HistoryAdapter(it)
+                this.smoothScrollToPosition(it.size-1)
+            }
+        }
     }
 
-    private fun adjustVisibility(){
-        binding.historyContainer.isVisible = !binding.historyContainer.isVisible
-    }
 
     private fun TextView.setAnimation() {
         this.setOnClickListener {
@@ -67,14 +77,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
             val colorFrom = resources.getColor(R.color.blackish)
             var colorTo = resources.getColor(R.color.whitish)
 
-            if (it.id == binding.addition.id
-                || it.id == binding.minus.id
-                || it.id == binding.div.id)              startSize = 40f
+            if (it.id == binding.addition.id || it.id == binding.minus.id || it.id == binding.div.id) startSize = 40f
+            else if (it.id == binding.multiply.id) startSize = 30f
+            else if (it.id == binding.parentheses.id) startSize = 22f
 
-             else if(it.id == binding.multiply.id)       startSize = 30f
-             else if(it.id == binding.parentheses.id)    startSize = 22f
-             else if(it.id == binding.equal.id){         startSize = 37f; colorTo = resources.getColor(R.color.green)}
-
+            else if (it.id == binding.equal.id) {
+                startSize = 37f;colorTo = resources.getColor(R.color.green)
+            }
 
             val animationDuration: Long = 300
             val animator = ValueAnimator.ofFloat(endSize, startSize)
@@ -98,11 +107,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
     }
 
     override fun onClick(v: View?) {
+        if (v?.id == binding.imageClock.id) {
+            adjustVisibility()
+        }
         viewModel.eachClick(v?.id)
     }
 
     private fun removeToolbarBottomBar() {
         val navBar: BottomNavigationView = requireActivity().findViewById(R.id.nav_view)
         navBar.visibility = View.GONE
+    }
+
+    private fun adjustVisibility() {
+        binding.historyContainer.isVisible = !binding.historyContainer.isVisible
+        binding.historyLine.isVisible = !binding.historyLine.isVisible
     }
 }

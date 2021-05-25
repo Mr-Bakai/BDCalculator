@@ -59,8 +59,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     // Navigation Component
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
     // Room components
     implementation "androidx.room:room-runtime:2.3.0"
@@ -77,4 +77,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.31"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
+
+    //Koin
+    implementation "org.koin:koin-core:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
 }

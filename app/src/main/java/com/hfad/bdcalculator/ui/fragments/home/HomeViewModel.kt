@@ -1,16 +1,19 @@
 package com.hfad.bdcalculator.ui.fragments.home
+
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.core.ui.base.BaseViewModel
 import com.hfad.bdcalculator.R
 import com.hfad.bdcalculator.data.History
-import com.hfad.bdcalculator.data.HistoryDatabase
+import com.hfad.bdcalculator.data.repository.MainRepo
 import io.kaen.dagger.ExpressionParser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class HomeViewModel : BaseViewModel() {
+class HomeViewModel(var repository: MainRepo) : BaseViewModel() {
+
     enum class ClickType(var viewId: Int, var viewType: String? = null) {
         ZERO(R.id.zero, "0"),
         ONE(R.id.one, "1"),
@@ -32,7 +35,8 @@ class HomeViewModel : BaseViewModel() {
         CHANGE(R.id.plusMinus, "-/+"),
         BACKSPACE(R.id.backSpace),
         EQUAL(R.id.equal),
-        DELETE(R.id.c);
+        DELETE(R.id.c),
+        CLOCK(R.id.imageClock);
 
         companion object {
             fun operation(value: Int?) = values().find { it.viewId == value }
@@ -42,6 +46,8 @@ class HomeViewModel : BaseViewModel() {
 
     var typedLiveData: MutableLiveData<String> = MutableLiveData()
     var resultLiveData: MutableLiveData<String> = MutableLiveData()
+    var fromRoom: LiveData<List<History>> = repository.readAllData()
+
     var typedOnes = ""
     var result = ""
 
@@ -67,24 +73,29 @@ class HomeViewModel : BaseViewModel() {
             result = ""
         }
 
-
+        //===============================EQUAL==============================
         if (viewId == ClickType.EQUAL.viewId) {
             if (!result.isNullOrBlank() && !typedOnes.isNullOrBlank()) {
                 typedOnes = ExpressionParser().evaluate(typedOnes).toString()
                 resultLiveData.value = String()
 
-                //TODO insert data to room
                 viewModelScope.launch(Dispatchers.IO) {
-                    HistoryDatabase.instance?.historyDao()?.insertAll(History("test"))
+                    //TODO add second param for History
+                    repository.insertModel(History(null, typedOnes, "asd"))
                 }
             }
+        }
+
+        //=========================REQUEST TO ROOM==========================
+        if (viewId == ClickType.CLOCK.viewId) {
+            fromRoom = repository.readAllData()
         }
 
         if (viewId == ClickType.PARENTHESES.viewId) {
             if (!ClickType.isContains) {
                 typedOnes = "$typedOnes("
                 ClickType.isContains = true
-            } else if (ClickType.isContains){
+            } else if (ClickType.isContains) {
                 typedOnes = "$typedOnes)"
                 ClickType.isContains = false
             }

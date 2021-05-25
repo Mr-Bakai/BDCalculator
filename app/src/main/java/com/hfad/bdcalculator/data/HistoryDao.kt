@@ -1,5 +1,6 @@
 package com.hfad.bdcalculator.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -8,10 +9,10 @@ import androidx.room.Query
 @Dao
 interface HistoryDao {
     @Query("SELECT * FROM history_table")
-    fun getAll(): List<History>
+    fun getAll(): LiveData<List<History>>
 
     @Insert
-    fun insertAll(vararg history: History)
+    suspend fun insertAll(vararg history: History)
 
     @Delete
     fun delete(vararg history: History)

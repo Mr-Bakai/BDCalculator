@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.hfad.bdcalculator.ui.fragments.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/extra_layout" />
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
