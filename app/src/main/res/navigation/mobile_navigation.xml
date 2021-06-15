@@ -12,14 +12,9 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.hfad.bdcalculator.ui.fragments.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/convertHomeFragment"
+        android:name="com.hfad.bdcalculator.ui.fragments.convertFragments.convertMain.ConvertHomeFragment"
+        android:label="fragment_convert_home"
+        tools:layout="@layout/fragment_convert_home" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.hfad.bdcalculator.ui.fragments.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>

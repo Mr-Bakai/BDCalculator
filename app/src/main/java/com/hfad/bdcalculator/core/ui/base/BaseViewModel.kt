@@ -1,4 +1,4 @@
-package com.example.core.ui.base
+package com.hfad.bdcalculator.core.ui.base
 
 import androidx.lifecycle.ViewModel
 

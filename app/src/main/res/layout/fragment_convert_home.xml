@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="15dp"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.fragments.convertFragments.convertMain.ConvertHomeFragment">
+
+    <TextView
+        android:id="@+id/textConverter"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_back"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Unit converter"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+
+        app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTop"
+        app:tabBackground="@drawable/tab_background"
+
+        app:tabIndicatorHeight="0dp"
+        app:tabMinWidth="50dp"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="10dp"
+        app:tabPaddingStart="10dp" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline5050"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline5050">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sevenW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/fourW"
+            app:layout_constraintEnd_toStartOf="@+id/eightW"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/seven"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="7" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/eightW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/fiveW"
+            app:layout_constraintEnd_toStartOf="@+id/nineW"
+            app:layout_constraintStart_toEndOf="@+id/sevenW"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/eight"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="8" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/nineW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/sixW"
+            app:layout_constraintEnd_toStartOf="@+id/backspaceW"
+            app:layout_constraintStart_toEndOf="@+id/eightW"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/nine"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="9" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/backspaceW"
+            style="@style/x_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/cW"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/nineW"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/backspace"
+                style="@style/x_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="⌫" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fourW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/oneW"
+            app:layout_constraintEnd_toStartOf="@+id/fiveW"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sevenW">
+
+            <TextView
+                android:id="@+id/four"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="4" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fiveW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/twoW"
+            app:layout_constraintEnd_toStartOf="@+id/sixW"
+            app:layout_constraintStart_toEndOf="@+id/fourW"
+            app:layout_constraintTop_toBottomOf="@+id/eightW">
+
+            <TextView
+                android:id="@+id/five"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="5" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sixW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/threeW"
+            app:layout_constraintEnd_toStartOf="@+id/cW"
+            app:layout_constraintStart_toEndOf="@+id/fiveW"
+            app:layout_constraintTop_toBottomOf="@+id/nineW">
+
+            <TextView
+                android:id="@+id/six"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="6" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cW"
+            style="@style/minus_plus_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/arrowUpW"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sixW"
+            app:layout_constraintTop_toBottomOf="@+id/backspaceW">
+
+            <TextView
+                android:id="@+id/c"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="C"
+                android:textColor="#D46C52" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/oneW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/plusMinusW"
+            app:layout_constraintEnd_toStartOf="@+id/twoW"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourW">
+
+            <TextView
+                android:id="@+id/one"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/twoW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/zeroW"
+            app:layout_constraintEnd_toStartOf="@+id/threeW"
+            app:layout_constraintStart_toEndOf="@+id/oneW"
+            app:layout_constraintTop_toBottomOf="@+id/fiveW">
+
+            <TextView
+                android:id="@+id/two"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="2" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/threeW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/commaW"
+            app:layout_constraintEnd_toStartOf="@+id/arrowUpW"
+            app:layout_constraintStart_toEndOf="@+id/twoW"
+            app:layout_constraintTop_toBottomOf="@+id/sixW">
+
+            <TextView
+                android:id="@+id/three"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="3" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/arrowUpW"
+            style="@style/minus_plus_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/arrowDownW"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/threeW"
+            app:layout_constraintTop_toBottomOf="@+id/cW">
+
+            <TextView
+                android:id="@+id/textArrowUp"
+                style="@style/minus_plus_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="↑" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/plusMinusW"
+            style="@style/neg_pos_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/zeroW"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/oneW">
+
+            <TextView
+                android:id="@+id/plusMinus"
+                style="@style/neg_pos_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="+/−" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/zeroW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/commaW"
+            app:layout_constraintStart_toEndOf="@+id/plusMinusW"
+            app:layout_constraintTop_toBottomOf="@+id/twoW">
+
+            <TextView
+                android:id="@+id/zero"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/commaW"
+            style="@style/text_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/arrowDownW"
+            app:layout_constraintStart_toEndOf="@+id/zeroW"
+            app:layout_constraintTop_toBottomOf="@+id/threeW">
+
+            <TextView
+                android:id="@+id/comma"
+                style="@style/text_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="," />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/arrowDownW"
+            style="@style/equal_style"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/commaW"
+            app:layout_constraintTop_toBottomOf="@+id/arrowUpW">
+
+           <TextView
+                android:id="@+id/textArrowDown"
+                style="@style/minus_plus_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="↓" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5050"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.51" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.083" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.125" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

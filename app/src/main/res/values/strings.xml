@@ -3,4 +3,17 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="area">
+
+        <item>Acres (ac)</item>
+        <item>Ares (a)</item>
+        <item>Hectares (ha)</item>
+        <item>Square centimeters (cm2)</item>
+        <item>Square feet (ft2)</item>
+        <item>Square inches (in2)</item>
+        <item>Square meters (m2)</item>
+
+    </string-array>
 </resources>

@@ -1,6 +1,6 @@
 package com.hfad.bdcalculator.di
 
-import com.hfad.bdcalculator.data.HistoryDatabase
+import com.hfad.bdcalculator.data.local.room.HistoryDatabase
 import org.koin.dsl.module
 
 

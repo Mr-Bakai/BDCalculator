@@ -1,4 +1,4 @@
-package com.hfad.ad4assignment2.extensions
+package com.hfad.bdcalculator.extensions
 import android.content.Context
 import android.view.View
 import android.widget.Toast

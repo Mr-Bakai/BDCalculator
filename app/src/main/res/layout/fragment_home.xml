@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
     android:background="@android:color/transparent"
     tools:context=".ui.fragments.home.HomeFragment">
 
@@ -41,13 +42,14 @@
         <EditText
             android:id="@+id/textMain"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="7dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="7dp"
             android:background="@android:color/transparent"
             android:fontFamily="@font/heebo_light"
             android:gravity="right"
             android:textColor="#545454"
-            android:textSize="37sp"
+            android:textSize="35sp"
             app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
             app:layout_constraintStart_toEndOf="@id/guidelineVertical2"
             app:layout_constraintTop_toTopOf="parent"
@@ -480,7 +482,6 @@
                 android:text="%" />
         </androidx.cardview.widget.CardView>
 
-
         <androidx.cardview.widget.CardView
             android:id="@+id/divW"
             style="@style/div_style"
@@ -508,14 +509,14 @@
             app:layout_constraintGuide_percent="0.72" />
 
         <LinearLayout
-            android:paddingStart="12dp"
-            android:paddingEnd="8dp"
             android:id="@+id/historyContainer"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/white"
             android:orientation="vertical"
-            android:visibility="visible"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/equalW"
             app:layout_constraintEnd_toStartOf="@id/guidHistory"
             app:layout_constraintStart_toStartOf="parent"
@@ -524,12 +525,12 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:scrollbars="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="7"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:nestedScrollingEnabled="true" />
+                android:nestedScrollingEnabled="true"
+                android:scrollbars="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             <Space
                 android:layout_width="match_parent"
@@ -545,14 +546,15 @@
                 app:cardCornerRadius="20dp">
 
                 <TextView
+                    android:id="@+id/clearHistory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:backgroundTint="@color/purple_200"
+                    android:text="Очистить журнал"
                     android:textColor="@color/white"
                     android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:backgroundTint="@color/purple_200"
-                    android:text="Очистить журнал" />
+                    android:textStyle="bold" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -568,9 +570,10 @@
             android:layout_width="1dp"
             android:layout_height="0dp"
             android:background="#B2D4D4D4"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/zeroW"
             app:layout_constraintStart_toEndOf="@id/historyContainer"
-            app:layout_constraintTop_toTopOf="@+id/historyContainer" />
+            app:layout_constraintTop_toTopOf="@id/historyContainer" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

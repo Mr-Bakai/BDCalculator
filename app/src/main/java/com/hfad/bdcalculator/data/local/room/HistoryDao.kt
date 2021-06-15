@@ -1,4 +1,4 @@
-package com.hfad.bdcalculator.data
+package com.hfad.bdcalculator.data.local.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -18,5 +18,5 @@ interface HistoryDao {
     fun delete(vararg history: History)
 
     @Query("DELETE FROM history_table")
-    fun deleteAll()
+    suspend fun deleteAll()
 }
