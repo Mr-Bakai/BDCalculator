@@ -19,11 +19,11 @@ val viewModelModule = module {
     viewModel { TemperatureViewModel() }
     viewModel { MainViewModel(get()) }
     viewModel { HomeViewModel(get()) }
+    viewModel { AreaViewModel(get()) }
     viewModel { LengthViewModel() }
     viewModel { VolumeViewModel() }
     viewModel { SpeedViewModel() }
     viewModel { BaseViewModel() }
-    viewModel { AreaViewModel() }
     viewModel { DataViewModel() }
     viewModel { MassViewModel() }
 }

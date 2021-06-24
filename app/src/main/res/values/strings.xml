@@ -10,10 +10,10 @@
         <item>Acres (ac)</item>
         <item>Ares (a)</item>
         <item>Hectares (ha)</item>
-        <item>Square centimeters (cm2)</item>
-        <item>Square feet (ft2)</item>
-        <item>Square inches (in2)</item>
-        <item>Square meters (m2)</item>
+        <item>Square centimeters (cm²)</item>
+        <item>Square feet (ft²)</item>
+        <item>Square inches (in²)</item>
+        <item>Square meters (m²)</item>
 
     </string-array>
 </resources>

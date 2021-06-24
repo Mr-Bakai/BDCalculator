@@ -33,32 +33,7 @@ class ConvertHomeViewModel : BaseViewModel() {
         }
     }
 
-    var typedOnes = ""
-    var result = ""
-
-
     fun eachClick(@IdRes id: Int?) {
         clickTypeLiveData.value = ClickType.operation(id)
-
-//        if (operation?.viewType != null) {
-//            operationClick(operation)
-//        } else {
-//            nonOperation(operation?.viewId)
-//        }
-//        dataSend()
-    }
-
-    private fun operationClick(clickedOne: ClickType) {
-
-//        typedOnes += clickedOne.viewType
-
-    }
-
-    private fun nonOperation(viewId: Int?) {
-
-    }
-
-    private fun dataSend() {
-//        clickTypeLiveData.value = typedOnes
     }
 }

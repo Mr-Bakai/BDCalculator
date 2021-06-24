@@ -1,16 +1,21 @@
 package com.hfad.bdcalculator.ui.fragments.convertFragments.convertMain
+
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.view.View
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.hfad.bdcalculator.R
 import com.hfad.bdcalculator.core.ui.base.BaseFragment
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.hfad.bdcalculator.databinding.FragmentConvertHomeBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ConvertHomeFragment: BaseFragment<FragmentConvertHomeBinding>(FragmentConvertHomeBinding::inflate), View.OnClickListener {
+
+class ConvertHomeFragment :
+    BaseFragment<FragmentConvertHomeBinding>(FragmentConvertHomeBinding::inflate),
+    View.OnClickListener {
 
     override val viewModel: ConvertHomeViewModel by viewModel()
 
@@ -57,6 +62,62 @@ class ConvertHomeFragment: BaseFragment<FragmentConvertHomeBinding>(FragmentConv
                 6 -> tab.setCustomView(R.layout.speed_view)
             }
         }.attach()
+
+
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                when (tab?.customView?.id) {
+                    R.id.areaView -> tab.parent?.findViewById<TextView>(R.id.textTitleArea)
+                        ?.setTextColor(resources.getColor(android.R.color.black))
+
+                    R.id.lengthView -> tab.parent?.findViewById<TextView>(R.id.textTitleLength)
+                        ?.setTextColor(resources.getColor(android.R.color.black))
+
+                    R.id.temperatureView -> tab.parent?.findViewById<TextView>(R.id.textTitleTemperature)
+                        ?.setTextColor(resources.getColor(android.R.color.black))
+
+                    R.id.volumeView -> tab.parent?.findViewById<TextView>(R.id.textTitleVolume)
+                        ?.setTextColor(resources.getColor(android.R.color.black))
+
+                    R.id.massView -> tab.parent?.findViewById<TextView>(R.id.textTitleMass)
+                        ?.setTextColor(resources.getColor(android.R.color.black))
+
+                    R.id.dataView -> tab.parent?.findViewById<TextView>(R.id.textTitleData)
+                        ?.setTextColor(resources.getColor(android.R.color.black))
+
+                    R.id.speedView -> tab.parent?.findViewById<TextView>(R.id.textTitleSpeed)
+                        ?.setTextColor(resources.getColor(android.R.color.black))
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                when (tab?.customView?.id) {
+                    R.id.areaView -> tab.parent?.findViewById<TextView>(R.id.textTitleArea)
+                        ?.setTextColor(resources.getColor(android.R.color.darker_gray))
+
+                    R.id.lengthView -> tab.parent?.findViewById<TextView>(R.id.textTitleLength)
+                        ?.setTextColor(resources.getColor(android.R.color.darker_gray))
+
+                    R.id.temperatureView -> tab.parent?.findViewById<TextView>(R.id.textTitleTemperature)
+                        ?.setTextColor(resources.getColor(android.R.color.darker_gray))
+
+                    R.id.volumeView -> tab.parent?.findViewById<TextView>(R.id.textTitleVolume)
+                        ?.setTextColor(resources.getColor(android.R.color.darker_gray))
+
+                    R.id.massView -> tab.parent?.findViewById<TextView>(R.id.textTitleMass)
+                        ?.setTextColor(resources.getColor(android.R.color.darker_gray))
+
+                    R.id.dataView -> tab.parent?.findViewById<TextView>(R.id.textTitleData)
+                        ?.setTextColor(resources.getColor(android.R.color.darker_gray))
+
+                    R.id.speedView -> tab.parent?.findViewById<TextView>(R.id.textTitleSpeed)
+                        ?.setTextColor(resources.getColor(android.R.color.darker_gray))
+                }
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
     }
 
     private fun TextView.setAnimation() {
@@ -88,7 +149,6 @@ class ConvertHomeFragment: BaseFragment<FragmentConvertHomeBinding>(FragmentConv
             onClick(this)
         }
     }
-
 
     override fun onClick(v: View?) {
         viewModel.eachClick(v?.id)

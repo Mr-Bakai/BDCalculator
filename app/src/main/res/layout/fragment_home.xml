@@ -40,6 +40,10 @@
             app:layout_constraintGuide_percent="0.57" />
 
         <EditText
+            android:focusableInTouchMode="true"
+            android:cursorVisible="false"
+            android:focusable="false"
+
             android:id="@+id/textMain"
             android:layout_width="0dp"
             android:layout_height="100dp"

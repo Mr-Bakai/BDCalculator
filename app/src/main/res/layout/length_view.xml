@@ -2,10 +2,12 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:id="@+id/lengthView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <TextView
+        android:id="@+id/textTitleLength"
         android:gravity="center"
         android:textSize="@dimen/tabTextSize"
         android:layout_gravity="center"

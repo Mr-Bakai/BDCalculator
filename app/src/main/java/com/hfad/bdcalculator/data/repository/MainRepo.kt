@@ -5,6 +5,8 @@ import com.hfad.bdcalculator.data.local.room.HistoryDatabase
 
 class MainRepo(var db: HistoryDatabase) {
 
+    var isEditFocused: Boolean = true
+
     suspend fun insertModel(history: History) { db.historyDao().insertAll(history) }
 
     fun readAllData() = db.historyDao().getAll()
