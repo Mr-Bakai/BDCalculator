@@ -39,7 +39,7 @@ class AreaViewModel(var repo: MainRepo) : BaseViewModel() {
 
     private var oneType: ClickType? = null
     private var twoType: ClickType? = null
-    
+
     private val _eventEditClicked = MutableLiveData<Boolean>()
     val eventEditClicked: LiveData<Boolean> = _eventEditClicked
 
@@ -87,14 +87,6 @@ class AreaViewModel(var repo: MainRepo) : BaseViewModel() {
         typedLiveData.value = typedOnes
     }
 
-    fun selectTopUnit(topUnit: String) {
-        oneType = ClickType.operation(topUnit)
-    }
-
-    fun selectBottomUnit(bottomUnit: String) {
-        twoType = ClickType.operation(bottomUnit)
-    }
-
     fun swapData(digit: String?, f: String?, t: String?) {
         if (digit != null) numToConvert = digit
         if (f != null) from = f
@@ -125,13 +117,19 @@ class AreaViewModel(var repo: MainRepo) : BaseViewModel() {
     }
 
     private fun convertFromTopToBottom() {
-        resultLiveData.value =
-            convert(numToConvert.toDouble(), FormulaProvider().provide(from, to)).toString()
+        resultLiveData.value = convert(numToConvert.toDouble(), FormulaProvider().provide(from, to)).toString()
     }
 
     private fun convertFromBottomToTop() {
-        resultLiveData.value =
-            convert(numToConvert.toDouble(), FormulaProvider().provide(to, from)).toString()
+        resultLiveData.value = convert(numToConvert.toDouble(), FormulaProvider().provide(to, from)).toString()
+    }
+
+    fun selectTopUnit(topUnit: String) {
+        oneType = ClickType.operation(topUnit)
+    }
+
+    fun selectBottomUnit(bottomUnit: String) {
+        twoType = ClickType.operation(bottomUnit)
     }
 
     fun selectTopAbb() {

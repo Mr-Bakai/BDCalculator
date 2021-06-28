@@ -20,8 +20,8 @@ interface HistoryDao {
     @Query("DELETE FROM history_table")
     suspend fun deleteAll()
 
-    @Query("SELECT result, typedOnes  FROM history_table")
-    fun getResult()
+//    @Query("SELECT result, typedOnes  FROM history_table")
+//    fun getResult()
 
     //Fragment Manager
     //Kotlin in Action

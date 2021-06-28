@@ -4,9 +4,9 @@ import android.annotation.SuppressLint
 import android.view.MotionEvent
 import android.view.View
 import android.widget.AdapterView
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.widget.ArrayAdapter
 import com.hfad.bdcalculator.R
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.hfad.bdcalculator.databinding.FragmentAreaBinding
 import com.hfad.bdcalculator.ui.fragments.convertFragments.convertMain.BaseConvertHomeFragment
 

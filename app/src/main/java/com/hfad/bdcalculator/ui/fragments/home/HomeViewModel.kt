@@ -14,7 +14,8 @@ import java.lang.Exception
 
 class HomeViewModel(var repository: MainRepo) : BaseViewModel() {
 
-    enum class ClickType(var viewId: Int, var viewType: String? = null) {
+    enum class ClickType(var viewId: Int,
+                         var viewType: String? = null) {
         ZERO(R.id.zero, "0"),
         ONE(R.id.one, "1"),
         TWO(R.id.two, "2"),
